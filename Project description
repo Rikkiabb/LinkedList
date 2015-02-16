@@ -1,0 +1,48 @@
+T-201-GSKI, GAGNASKIPAN VOR 2014
+LINKED LISTS
+SKILAVERKEFNI 1
+Assignment grading. A full mark is given for code that is implemented as specified and accepted by Mooshak. Partially completed solutions (that compile on Mooshak), will be graded by hand and get a maximum grade of 7 for each part.
+Hand-in
+You do not have to hand in your code to Myschool. It suffices to submit your solution to Mooshak. IntList (70%)
+In this part you will implement the abstract data type list, for integers, using a linked list. Your implementation should use two classes IntNode and IntList. The interface and implementation of the IntNode class are given in IntNode.h and IntNode.cpp (see pages 774–775 in Savitch). The interface of the class IntList is given in IntList.h. Your task is to implement this interface in IntList.cpp.
+You are also provided with a main-program to test your implementation. Note that the testing is not complete. You should write your own tests to ensure that your implementation is correct!
+The interface of the IntList class is as follows.
+#include <iostream>
+#include "IntNode.h"
+using namespace std;
+class IntList
+{
+    public:
+        // Constructor: creates an empty list.
+        IntList();
+        // Destructor.
+        ~IntList();
+        // Returns the length of the list.
+        int length();
+￼Date: 25. janúar 2014.
+1
+2
+LINKED LISTS
+    // Inserts a node with value the_number at the head of the list.
+    void headInsert(int the_number);
+    // Inserts a node with value the_number at the end of the list.
+    void endInsert(int the_number);
+    // Removes the first instance of a node with value the_number from the list.
+    void remove(int the_number);
+    // Removes all the nodes in the list.
+    void removeAll();
+    // Reverses the order of the nodes in the list.
+    void reverse();
+    // A friend function for writing the contents of the list to an output stream.
+    friend ostream& operator <<(ostream& outs, const IntList& lis);
+private:
+    // pointer to the head of the linked list.
+    NodePtr head;
+};
+A few notes about the implementation.
+• The function removeAll() should release all the memory that has been allocated for the list.
+• The function reverse() should be implemented in such a way that only pointers are changed. No
+copying of elements or nodes should take place.
+• The operator << should output the elements of the list, separated by a single space. • Make sure your functions handle empty lists.
+• Please comment your code.
+Submitting. To submit this problem to Mooshak you must create a zip file containing IntNode.h, IntNode.cpp, IntList.h and IntList.cpp. You can include other files, such as main.cpp, but that is not necessary.
